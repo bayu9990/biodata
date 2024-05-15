@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "Gotham-Bold";
+    src: url("/assets/font/Gotham-Bold.otf");
+}
+
+@font-face {
+    font-family: "Gotham-Light";
+    src: url("/assets/font/Gotham-Light.otf");
+}
+
+@font-face {
+    font-family: "Gotham-Medium";
+    src: url("/assets/font/GothamMedium.ttf");
+}
+
+body{
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    background-image: url('/assets/building.jpg');
+    background-size: cover;
+}
+
+.message{
+    font-family: "Gotham-Medium";
+    color: #C80D0D;
+    font-size: 1rem;
+    margin: 0.1rem;
+}
+
+h1{
+    font-family: "Gotham-Bold";
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.login-forms{
+    width: 25%;
+    margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.username-input{
+    margin-top: 0.2rem;
+    display: flex;
+    align-items: center;
+	padding: 1rem 1rem;
+	background: #373737;
+	color: #FFFFFF;
+	border-radius: 1rem;
+}
+
+#username{
+    font-family: "Gotham-Light";
+    width: 100%;
+    outline: none;
+	background: #373737;
+    border: 0px solid transparent;
+	color: #FFFFFF;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+#username::placeholder{
+    font-family: "Gotham-Light";
+    font-size: 1rem;
+    color: #8D8D8D;
+}
+
+.password-input{
+    display: flex;
+    align-items: center;
+	padding: 1rem 1rem;
+	background: #373737;
+	color: #FFFFFF;
+	border-radius: 1rem;
+    margin-top: 0.5rem;
+}
+
+#password{
+    width: 100%;
+    outline: none;
+	background: #373737;
+    border: 0px solid transparent;
+	color: #FFFFFF;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    font-family: "Gotham-Light";
+}
+
+#password::placeholder{
+    font-size: 1rem;
+    font-family: "Gotham-Light";
+    color: #8D8D8D;
+}
+
+#login{
+    margin-top: 0.5rem;
+    background-color: #328D5A;
+	border-radius:1rem;
+    font-size: 1.2rem;
+	border:1px solid #328D5A;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:1rem;
+	padding:0.8rem 0rem;
+	text-decoration:none;
+    width: 100%;
+    font-family: "Gotham-Medium";
+}

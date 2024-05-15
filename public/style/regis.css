@@ -1,0 +1,129 @@
+@font-face {
+    font-family: "Gotham-Bold";
+    src: url("/assets/font/Gotham-Bold.otf");
+}
+
+@font-face {
+    font-family: "Gotham-Light";
+    src: url("/assets/font/Gotham-Light.otf");
+}
+
+@font-face {
+    font-family: "Gotham-Medium";
+    src: url("/assets/font/GothamMedium.ttf");
+}
+
+body{
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    background-image: url('/assets/building.jpg');
+    background-size: cover;
+}
+
+h1{
+    font-family: "Gotham-Bold";
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.login-forms{
+    width: 25%;
+    margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.input{
+    margin-top: 0.2rem;
+    display: flex;
+    align-items: center;
+	padding: 1rem 1rem;
+	background: #373737;
+	color: #FFFFFF;
+	border-radius: 1rem;
+}
+
+#email{
+    font-family: "Gotham-Light";
+    width: 100%;
+    outline: none;
+	background: #373737;
+    border: 0px solid transparent;
+	color: #FFFFFF;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+#email::placeholder{
+    font-size: 1rem;
+    color: #8D8D8D;
+}
+
+
+#username{
+    font-family: "Gotham-Light";
+    width: 100%;
+    outline: none;
+	background: #373737;
+    border: 0px solid transparent;
+	color: #FFFFFF;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+#username::placeholder{
+    font-size: 1rem;
+    color: #8D8D8D;
+}
+
+
+#password{
+    font-family: "Gotham-Light";
+    width: 100%;
+    outline: none;
+	background: #373737;
+    border: 0px solid transparent;
+	color: #FFFFFF;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+#password::placeholder{
+    font-size: 1rem;
+    color: #8D8D8D;
+}
+
+#confirm-pass{
+    font-family: "Gotham-Light";
+    width: 100%;
+    outline: none;
+	background: #373737;
+    border: 0px solid transparent;
+	color: #FFFFFF;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+#confirm-pass::placeholder{
+    font-size: 1rem;
+    color: #8D8D8D;
+}
+
+#regis{
+    font-family: "Gotham-Bold";
+    margin-top: 0.2rem;
+    background-color: #328D5A;
+	border-radius:1rem;
+    font-size: 1.2rem;
+	border:1px solid #328D5A;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:1rem;
+	padding:0.8rem 0rem;
+	text-decoration:none;
+    width: 100%;
+}   

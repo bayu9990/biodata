@@ -1,0 +1,229 @@
+@font-face {
+    font-family: "Gotham-Bold";
+    src: url("/assets/font/Gotham-Bold.otf");
+}
+
+@font-face {
+    font-family: "Gotham-Light";
+    src: url("/assets/font/Gotham-Light.otf");
+}
+
+@font-face {
+    font-family: "Gotham-Medium";
+    src: url("/assets/font/GothamMedium.ttf");
+}
+
+body{
+    background-image: 121212;
+    margin: 0;
+    color: white;
+    background-color: black;
+}
+
+p{
+    margin: 0;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin: 1.2rem 0rem;
+}
+
+.banner{
+    z-index: 1;
+    box-shadow: 0px 20px 103px 80px rgba(61,70,78,0.65);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    overflow: hidden;
+    padding: 3rem 5rem;
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('assets/banner.jpeg');
+    font-family: "Gotham-Bold";
+    position: relative;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+   border: 1px white solid;
+   border-radius: 5rem;
+   padding: 0.6rem 1.5rem;
+   top: 2rem;
+   right: 5rem;
+   font-size: 0.9rem;
+   position: absolute;
+}
+
+.user img{
+    width: 1.2rem;
+}
+
+.job{
+    font-size: 1rem;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-direction: row;
+}
+
+.job img{
+    width: 1.5rem;
+}
+
+.desc p{
+    line-height: 1.5rem;
+    font-family: "Gotham-Light";
+}
+
+.desc {
+    width: 40%;
+}
+
+.data-diri{
+    padding: 3rem 5rem;
+}
+
+.control-center {
+    z-index: 100;
+    margin-bottom: 3.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.control-center img{
+    width: 3.5rem;
+}
+
+.control-center img:nth-child(2){
+    margin-top: 0.2rem;
+    width: 2rem;
+}
+
+.control-center img:nth-child(4){
+    margin-top: 0.2rem;
+    width: 1.5rem;
+}
+
+.npm{
+    font-family: "Gotham-Light";
+    font-size: 1rem;
+    border: 1px white solid;
+    border-radius: 10px;
+    padding: 0.5rem 1.5rem;
+}
+
+.info{
+    font-size: 1.2rem;
+    font-family: "Gotham-Bold";
+}
+
+.info-items{
+    width: 100%;
+    margin-top: 3rem;
+    font-size: 1rem;
+    font-family: "Gotham-Medium";
+    text-align: left;
+}
+
+.info-items td{
+    width: 50%;
+}
+
+.info-items img{
+    height: 4.5rem;
+}
+
+.items{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .banner{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 1rem 1.5rem;
+    }
+
+    .banner h1{
+        font-size: 3rem;
+        margin: 0.5rem 0rem;
+    }
+
+    .banner p{
+        font-size: 0.8rem;
+        width: 85vw;
+        line-height: 1.1rem;
+    }
+
+    .job{
+        font-size: 0.8rem;
+    }
+
+    .user {
+        right: 1.5rem;
+    }
+
+    .user p {
+        width: fit-content;
+        font-size: 0.6rem;
+    }
+
+    .user img{
+        width: 1rem;
+    }
+
+    .data-diri{
+        padding: 1rem 1.5rem;
+    }
+
+    .npm{
+        font-size: 0.8rem;
+    }
+
+    .control-center {
+        gap: 0.8rem;
+        margin-top: 1rem;
+    }
+
+    .control-center img:nth-child(1){
+        width: 2.5rem;
+    }
+
+    .control-center img:nth-child(2){
+        width: 1.5rem;
+    }
+
+    .control-center img:nth-child(3){
+        width: 0.8rem;
+    }
+
+    .info-items img{
+        height: 3rem;
+    }
+
+    .items{
+        gap: 0.8rem;
+        margin-bottom: 0;
+    }
+
+    .info-items td{
+        width: 60%;
+        font-size: 0.8rem;
+    }
+
+    .info-items{
+        vertical-align: top;
+    }
+}

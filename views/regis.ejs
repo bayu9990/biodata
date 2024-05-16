@@ -7,27 +7,50 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="login-forms">
+    <div class="regis-forms">
         <h1>Daftar</h1>
-        <div class="input">
-            <img src="/assets/email.svg" alt="email-icon">
-            <input id="email" placeholder="Email" type="email">
-        </div>
-        <div class="input">
-            <img src="/assets/user.svg" alt="user-icon">
-            <input id="username" placeholder="Username" type="text">
-        </div>
-        <div class="input">
-            <img src="/assets/pass.svg" alt="password-icon">
-            <input id="password" placeholder="Password" type="password">
-        </div>
-        <div class="input">
-            <img src="/assets/pass.svg" alt="password-icon">
-            <input id="confirm-pass" placeholder="Konfirmasi Password" type="password">
-        </div>
-        <button id="regis" type="submit">
-            Daftar
-        </button>
+        <% if (message) { %>
+            <% if (message.length > 0) { %>
+                <p class="message"><%= message %></p>
+            <% } %>
+        <% } %>
+        <form action="/regis" method="post">
+            <div class="input">
+                <img src="/assets/email.svg" alt="email-icon">
+                <input id="email" name="email" placeholder="Email" type="email">
+            </div>
+            <div class="input">
+                <img src="/assets/user.svg" alt="user-icon">
+                <input id="username" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="input">
+                <img src="/assets/pass.svg" alt="password-icon">
+                <input id="password" name="password" placeholder="Password" type="password">
+            </div>
+            <div class="input">
+                <img src="/assets/pass.svg" alt="password-icon">
+                <input id="confirm-pass" name="confirm" placeholder="Konfirmasi Password" type="password">
+            </div>
+            <button id="regis" type="submit">
+                Daftar
+            </button>
+        </form>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let inputFields = document.querySelectorAll('input[type="email"],input[type="text"], input[type="password"]');
+            inputFields.forEach(function(inputField) {
+                inputField.addEventListener('input', function() {
+                    let message = document.querySelector('.message');
+                    if (message) {
+                        message.remove();
+                    }
+                });
+            });
+        });
+
+    </script>
+
 </body>
 </html>

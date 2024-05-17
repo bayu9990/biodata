@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="/style/profile.css" />
+  </head>
+  <body>
+    <div class="profile-pic-container">
+      <img id="profile-pic" src="/assets/profile/user.png" alt="pic" />
+    </div>
+    <div class="info-container">
+      <div class="edit-pic">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <label for="upload" id="ubah" onchange="changeProfile(event)">
+            <img src="/assets/pencil.svg" alt="edit" />
+            <p>Ubah foto profile</p>
+            <input id="upload" accept="image/*" type="file" />
+          </label>
+          <button type="submit" id="upload-btn" class="upload-hide">
+            <p>Upload</p>
+          </button>
+        </form>
+      </div>
+      <p>Ubah untuk edit biodata kamu.</p>
+      <form class="info">
+        <div class="input">
+          <label for="role">Profesi</label>
+          <select name="role" id="role">
+            <option value="Mahasiswa">Mahasiswa</option>
+            <option value="Dosen">Dosen</option>
+          </select>
+        </div>
+        <div class="input">
+          <label for="name">Nama</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div class="input">
+          <label for="desc">Deksripsi</label>
+          <textarea id="desc" name="desc" rows="12" cols="50"></textarea>
+        </div>
+        <div class="input">
+          <label for="jenis">Jenis Kelamin</label>
+          <select name="jenis" id="jenis">
+            <option value="Mahasiswa">Laki-Laki</option>
+            <option value="Dosen">Perempuan</option>
+          </select>
+        </div>
+        <div class="input">
+          <label for="tempat">Tempat Lahir</label>
+          <input type="text" name="tempat" id="name" />
+        </div>
+        <div class="input">
+          <label for="tanggal">Tanggal Lahir</label>
+          <input type="date" name="tanggal" id="name" />
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function changeProfile(event) {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function () {
+          const image = document.getElementById("profile-pic");
+          image.src = reader.result;
+        };
+
+        if (file) {
+          reader.readAsDataURL(file);
+          const uploadBtn = document.getElementById("upload-btn");
+          uploadBtn.classList.remove("upload-hide");
+          uploadBtn.classList.add("upload");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -45,6 +45,10 @@ h1 {
   position: relative;
 }
 
+#profile{
+  width: 2rem;
+}
+
 .user-container {
   display: flex;
   align-items: center;
@@ -55,12 +59,15 @@ h1 {
 }
 
 .user {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   border: 1px white solid;
+  background-color: transparent;
   border-radius: 5rem;
-  padding: 0.6rem 1.5rem;
+  color: white;
+  padding: 0.4rem 0.8rem;
   font-size: 0.9rem;
 }
 

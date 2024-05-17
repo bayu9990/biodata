@@ -1,0 +1,155 @@
+@font-face {
+    font-family: "Gotham-Bold";
+    src: url("/assets/font/Gotham-Bold.otf");
+}
+
+@font-face {
+    font-family: "Gotham-Light";
+    src: url("/assets/font/Gotham-Light.otf");
+}
+
+@font-face {
+    font-family: "Gotham-Medium";
+    src: url("/assets/font/GothamMedium.ttf");
+}
+
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+    overflow-y: scroll;
+    padding: 2rem 0rem;
+}
+
+#ubah img{
+    width: 1.5rem;
+}
+
+#ubah{
+    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px white solid;
+  background-color: transparent;
+  border-radius: 5rem;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  align-self: center;
+}
+
+.upload-hide{
+    display: none;
+}
+
+.upload {
+    cursor: pointer;
+  border-radius: 5rem;
+  padding: 0.1rem 2rem;
+  border: 1px white solid;
+  background-color: transparent;
+  color: white;
+}
+
+.edit-pic{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+#profile-pic{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.info-container{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.info-container p{
+    font-family: "Gotham-Medium";
+    color: white;
+    text-align: center;
+}
+
+.info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input{
+    margin-top: 0.2rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+	padding: 1rem 1rem;
+	background: #373737;
+	color: #FFFFFF;
+	border-radius: 1rem;
+}
+
+.input input{
+    font-family: "Gotham-Light";
+    width: 100%;
+    outline: none;
+	background: #373737;
+    border: 0px solid transparent;
+	color: #FFFFFF;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+label { 
+    font-family: "Gotham-Medium";
+    align-self: flex-start;
+}
+
+.input textarea{
+    font-family: "Gotham-Light";
+    width: 100%;
+    outline: none;
+	background: #373737;
+    border: 0px solid transparent;
+	color: #FFFFFF;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    resize: none;
+}
+
+.input select{
+    font-family: "Gotham-Light";
+    width: 100%;
+    outline: none;
+	background: #373737;
+    border: 0px solid transparent;
+	color: #FFFFFF;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    resize: none;
+}
+
+
+
+
+
+
+
+

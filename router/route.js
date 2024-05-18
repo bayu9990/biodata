@@ -1,32 +1,42 @@
 import express from 'express'
 import { login, regis } from '../controller/user'
 import { isLoggedin, logged } from '../middleware/isLogin'
-import multer from 'multer'
+import busboy from 'busboy';
+import fs from 'fs';
+import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
 
 const route = express.Router();
-const uuid = uuidv4();
-
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, '/assets/')
-    },
-    filename: function (req, file, cb) {
-        cb(null, uuid + "-" + file.originalname)
-    }
-});
-
-const upload = multer({ storage: storage });
 
 route.get('/',(req,res)=>{
     res.render('home')
 });
 
-route.post('/upload',upload.single('img'),(req,res)=>{
-    res.redirect('/biodata')
-})
-
 route.post('/login',login);
+
+route.post('/upload',(req,res)=>{
+    const bb = busboy({ headers: req.headers });
+    bb.on('file', (fieldname, file, filename, encoding, mimetype) => {
+
+        const uniqueFilename = `${uuidv4()}-${filename.filename}`;
+        const dir = path.join(__dirname, '../public/assets/profile', uniqueFilename);
+        console.log(filename.filename);
+        
+        const writeStream = fs.createWriteStream(dir);
+
+        file.pipe(writeStream);
+        file.on('end', () => {
+            console.log("udah")
+        });
+    });
+
+    bb.on('finish', () => {
+        console.log('Upload complete');
+        req.unpipe(bb);
+    });
+
+    req.pipe(bb);
+})
 
 route.get('/login',logged,(req,res)=>{
     res.render('login',{ message: req.flash('message') })

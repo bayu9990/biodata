@@ -55,6 +55,10 @@ body{
   color: white;
 }
 
+#upload-btn{
+    margin-top: 1rem;
+}
+
 .edit-pic{
     display: flex;
     flex-direction: row;
@@ -144,6 +148,18 @@ label {
     font-size: 1rem;
     margin-left: 0.5rem;
     resize: none;
+}
+
+.info-button{
+    margin-top: 1rem;
+width: 100%;
+cursor: pointer;
+  border-radius: 5rem;
+  padding: 0.1rem 2rem;
+  height: 3rem;
+  border: 1px white solid;
+  background-color: transparent;
+  color: white;
 }
 
 

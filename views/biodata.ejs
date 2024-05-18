@@ -13,7 +13,7 @@
                 <div class="user-container">
                     <form action="/biodata/profile" method="get" >
                         <button class="user">
-                            <img id="profile" src="/assets/profile/user.png" alt="user">
+                            <img id="profile" src="<%= info.profile %>" alt="user">
                             <p>Pemrograman Web B</p>
                         </button>
                     </form>
@@ -25,10 +25,10 @@
                 </div>
                 <div class="job">
                     <img src="/assets/verified.png" alt="verified">
-                    <p>Mahasiswa</p>
+                    <p><%= info.role %></p>
                 </div>
-                <h1>Bayu Setiawan</h1>
-                <p>Saya Seorang Mahasiswa Prodi Informatika di Universitas Pembangunan Nasional "VETERAN" Jawa Timur, tepatnya di Surabaya Jawa Timur.</p>
+                <h1><%= info.nama %></h1>
+                <p><%= info.deskripsi %></p>
             </div>
         </div>
     </div>
@@ -37,7 +37,7 @@
             <img src="/assets/play.svg" alt="play">
             <img src="/assets/like.svg" alt="like">
             <div class="npm">
-                <p>NPM 22081010027</p>
+                <p>Welcome</p>
             </div>
             <img src="/assets/more.svg" alt="more">
             
@@ -54,7 +54,7 @@
                         </div>
                     </td>
                     <td>
-                        <p>Bayu Setiawan</p>
+                        <p><%= info.nama %></p>
                     </td>
                 </tr>
                 <tr>
@@ -66,7 +66,7 @@
                         </div>
                     </td>
                     <td>
-                        <p>Laki - Laki</p>
+                        <p><%= info.jenis_kelamin %></p>
                     </td>
                 </tr>
                 <tr>
@@ -78,7 +78,7 @@
                         </div>
                     </td>
                     <td>
-                        <p>15 Juli 2004</p>
+                        <p><%= date %></p>
                     </td>
                 </tr>
                 <tr>
@@ -90,7 +90,7 @@
                         </div>
                     </td>
                     <td>
-                        <p>Lamongan</p>
+                        <p><%= info.tempat_lahir %></p>
                     </td>
                 </tr>
             </table>

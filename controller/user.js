@@ -3,6 +3,24 @@ import { db } from "../database/db";
 import bcrypt from 'bcrypt';
 import { v4 as uuidv4 } from 'uuid';
 
+export const changeProfilePic = async(req,res) =>{
+    try {
+        await db.query("UPDATE biodata SET profile = :profile WHERE user_id = :id",{
+            replacements : {
+                profile : req.profile,
+                id: req.session.userId
+            },
+            type: QueryTypes.UPDATE
+        }).then(()=>{
+            res.redirect('/biodata')
+        }).catch(()=>{
+            console.log("Error")
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 export const regis = async(req,res)=>{
     const username = req.body.username;
     const password = req.body.password;
@@ -39,6 +57,11 @@ export const regis = async(req,res)=>{
                             email: email
                         }
                     });
+
+                    await db.query("INSERT INTO biodata (id,user_id) VALUES (:id,:user_id)",{
+                        replacements: {id: uuidv4(),user_id:uuid},
+                        type: QueryTypes.INSERT
+                    })
     
                     req.session.userId = uuid;
                     res.redirect('/biodata');
@@ -68,7 +91,7 @@ export const login = async(req,res) =>{
             });
     
             if (!result || result.length === 0) {
-                req.flash('message', "Username atau password salah!!");
+                req.flash('message', "Username atau password salah !!");
                 res.redirect('/login');
             } else {
                 const match = await bcrypt.compare(pass, result[0].password);
@@ -77,7 +100,7 @@ export const login = async(req,res) =>{
                     req.session.userId = result[0].id;
                     res.redirect('/biodata');
                 } else {
-                    req.flash('message', "Username atau password salah!!");
+                    req.flash('message', "Username atau password salah !!");
                     res.redirect('/login');
                 }
             }
@@ -87,7 +110,7 @@ export const login = async(req,res) =>{
             res.redirect('/login');
         }
     } else {
-        req.flash('message', "Username atau password tidak boleh kosong!!");
+        req.flash('message', "Username atau password tidak boleh kosong !!");
         res.redirect('/login');
     }
 };

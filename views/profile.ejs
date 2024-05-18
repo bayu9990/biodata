@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="profile-pic-container">
-      <img id="profile-pic" src="/assets/profile/user.png" alt="pic" />
+      <img id="profile-pic" src="<%= info.profile %>" alt="pic" />
     </div>
     <div class="info-container">
       <div class="edit-pic">
@@ -24,37 +24,46 @@
         </form>
       </div>
       <p>Ubah untuk edit biodata kamu.</p>
-      <form class="info">
+      <form class="info" method="post" action="/profile/update">
         <div class="input">
           <label for="role">Profesi</label>
           <select name="role" id="role">
-            <option value="Mahasiswa">Mahasiswa</option>
-            <option value="Dosen">Dosen</option>
+            <% ['Mahasiwa', 'Dosen'].forEach(function(option) { %>
+                <option value="<%= option %>" <%= option === info.role ? 'selected' : '' %>>
+                    <%= option %>
+                </option>
+            <% }); %>
           </select>
         </div>
         <div class="input">
           <label for="name">Nama</label>
-          <input type="text" name="name" id="name" />
+          <input type="text" value="<%= info.nama %>" name="nama" id="name" />
         </div>
         <div class="input">
           <label for="desc">Deksripsi</label>
-          <textarea id="desc" name="desc" rows="12" cols="50"></textarea>
+          <textarea id="desc" name="desc" rows="12" cols="50"><%= info.deskripsi %></textarea>
         </div>
         <div class="input">
           <label for="jenis">Jenis Kelamin</label>
-          <select name="jenis" id="jenis">
-            <option value="Mahasiswa">Laki-Laki</option>
-            <option value="Dosen">Perempuan</option>
+          <select name="gender" id="jenis">
+            <% ['Laki-Laki', 'Perempuan'].forEach(function(option) { %>
+                <option value="<%= option %>" <%= option === info.jenis_kelamin ? 'selected' : '' %>>
+                    <%= option %>
+                </option>
+            <% }); %>
           </select>
         </div>
         <div class="input">
           <label for="tempat">Tempat Lahir</label>
-          <input type="text" name="tempat" id="name" />
+          <input type="text" value="<%= info.tempat_lahir %>" name="place" id="name" />
         </div>
         <div class="input">
           <label for="tanggal">Tanggal Lahir</label>
-          <input type="date" name="tanggal" id="name" />
+          <input type="date" value="<%= info.tanggal_lahir %>" name="birth" id="name" />
         </div>
+        <button type="submit" class="info-button" >
+            Ubah
+        </button>
       </form>
     </div>
 

@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="profile-pic-container">
-      <img id="profile-pic" src="<%= info.profile %>" alt="pic" />
+      <img id="profile-pic" src="<%= info.profile || '/assets/profile/user.png' %>" alt="pic" />
     </div>
     <div class="info-container">
       <div class="edit-pic">
